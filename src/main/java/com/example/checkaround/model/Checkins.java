@@ -1,10 +1,14 @@
 package com.example.checkaround.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Checkins {
-
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String locationName;
 	private double latitude;
@@ -50,8 +54,6 @@ public class Checkins {
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
-	
-	
 	
 
 }

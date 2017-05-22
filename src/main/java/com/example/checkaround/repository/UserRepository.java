@@ -8,6 +8,6 @@ import com.example.checkaround.model.Users;
 
 public interface UserRepository extends JpaRepository<Users, Integer>{
 	
-	public List<Users> findByID(Integer id);
-	
+	public List<Users> findById(Integer id);
+
 }

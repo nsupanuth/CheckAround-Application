@@ -2,15 +2,20 @@ package com.example.checkaround.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Users {
 	
+	@Id
 	@GeneratedValue
 	private int id;
 	private String username;
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Checkins> checkins;
 
 	public int getId() {
