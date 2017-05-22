@@ -18,8 +18,8 @@ public class Checkins {
 	private Double latitude;
 	private Double longitude;
 	private String caption;
-	@Temporal(TemporalType.TIME)
-	private Date timestamp ;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date timestamp = new Date();
 	
 	public int getId() {
 		return id;
