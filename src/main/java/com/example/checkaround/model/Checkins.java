@@ -1,19 +1,25 @@
 package com.example.checkaround.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Checkins {
 	
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	private String locationName;
-	private double latitude;
-	private double longitude;
+	private Double latitude;
+	private Double longitude;
 	private String caption;
+	@Temporal(TemporalType.TIME)
+	private Date timestamp ;
 	
 	public int getId() {
 		return id;
@@ -31,7 +37,7 @@ public class Checkins {
 		this.locationName = locationName;
 	}
 
-	public double getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
@@ -39,7 +45,7 @@ public class Checkins {
 		this.latitude = latitude;
 	}
 
-	public double getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
@@ -54,6 +60,16 @@ public class Checkins {
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+	
 	
 
 }

@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.checkaround.model.Checkins;
 import com.example.checkaround.model.Users;
 import com.example.checkaround.repository.UserRepository;
+import com.example.checkaround.service.LocationService;
 
 @RestController
 public class checkinController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private LocationService locationService;
 
 	@RequestMapping(value = "/user",method = RequestMethod.POST)
 	public List<Users> userCheckin(@RequestBody Users user){
@@ -36,7 +40,11 @@ public class checkinController {
 		userRepository.save(u);
 		
 		return userRepository.findAll();
-
+	}
+	
+	@RequestMapping(value = "/showlocations",method = RequestMethod.GET)
+	public List<Checkins> userCheckin(){
+		return locationService.showListOflocations();
 	}
 	
 	
